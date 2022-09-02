@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "../utility/axios";
 
 function Notification({ notification }) {
-    const [thisNotification, setThisNotification] = useState(notification);
+    //const [thisNotification, setThisNotification] = useState(notification);
 
+    /*
     // Changes the active status of notification.
     const HandleActive = async () => {
         if (thisNotification.active === true) {
@@ -39,15 +40,13 @@ function Notification({ notification }) {
     useEffect(() => {
         setThisNotification(notification);
     }, [notification, thisNotification])
-
+*/
     return (
-        <li>
-            <div>{thisNotification.product}</div>
-            <div>{thisNotification.price}</div>
-            <div>{thisNotification.active ? "Active" : "Disabled"}</div>
-            <button onClick={HandleActive}>{thisNotification.active ? "Deactivate" : "Activate"}</button>
-            <button onClick={RemoveNotification}>Remove</button>
-        </li>
+        <>
+            <div>{notification.product}</div>
+            <div>{notification.price}</div>
+            <div>{notification.active ? "Active" : "Disabled"}</div>
+        </>
 
     )
 }

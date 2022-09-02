@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import NotificationList from "../components/NotificationList";
-import axios from "../utility/axios";
+
 
 function NotificationPage() {
-    const [notifications, setNotifications] = useState([]);
+    //const [notifications, setNotifications] = useState([]);
 
-
-    useEffect(() => {
-        // Fetch notifications
-        async function fetchData() {
-            const response = await axios.get("notifications");
-            if (response) {
-                setNotifications(response.data);
+    /*
+        useEffect(() => {
+            // Fetch notifications
+            async function fetchData() {
+                const response = await axios.get("notifications");
+                if (response) {
+                    setNotifications(response.data);
+                }
             }
-        }
-        fetchData();
-
-    }, [])
-
+            fetchData();
+    
+        }, [notifications])
+    */
     return (
         <div className="container">
-            <NotificationList notifications={notifications} />
+            <NotificationList />
         </div>
     )
 }
