@@ -1,20 +1,20 @@
 import Product from "./Product";
-
+import "../styles/search.css";
 
 function ProductList({ products }) {
 
     return (
-        <div className="container">
+        <div className="search-products-container">
             <table>
                 <thead>
                     <tr>
-                        <th>Image</th>
+                        <th className="th-image">Image</th>
                         <th>Product name</th>
                         <th>Price</th>
                         <th>Link to source</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="tbody-product-list">
                     {products.map((p => (
                         <Product product={p} />
                     )))}

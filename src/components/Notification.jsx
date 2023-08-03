@@ -4,9 +4,9 @@ function Notification({ notification }) {
 
     return (
         <>
-            <div>{notification.product}</div>
-            <div>{notification.price}</div>
-            <div>{notification.active ? "Active" : "Disabled"}</div>
+            <p>{notification.product}</p>
+            <p>{notification.price} €</p>
+            <p>{notification.active ? "Active" : "Disabled"}</p>
         </>
 
     )

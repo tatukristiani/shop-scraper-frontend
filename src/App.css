@@ -2,6 +2,33 @@
   text-align: center;
 }
 
+html,
+body {
+  min-height: 100%;
+  background-color: #282c34;
+}
+
+h2 {
+  margin: 20px;
+}
+
+
+.register-container,
+.login-container,
+.search-container {
+
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 50px;
+
+}
+
+.register-div,
+.login-div,
+.search-div {
+  margin: 20px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -2,6 +2,8 @@ import React, { useState, useContext } from "react";
 import axios from "../utility/axios";
 import { UserContext } from "../utility/UserContext.js";
 import { Link } from "react-router-dom";
+import "../styles/createNotification.css";
+
 
 function CreateNotificationPage() {
     const [productName, setProductName] = useState("");
@@ -32,19 +34,23 @@ function CreateNotificationPage() {
     return (
         <>
             {savedUser ? (
-                <div className="container">
+                <div className="notification-create-container">
                     <h3>Aseta sähköposti ilmoitus hakusanalla ja MAX hinnalla</h3>
                     <form method="post" onSubmit={createNotification}>
                         <label>Hakusana:</label>
+                        <br />
                         <input type="text" value={productName} onChange={(event) => setProductName(event.target.value)} />
-                        <br></br>
+                        <br />
+                        <br />
                         <label>Hinta (MAX):</label>
+                        <br />
                         <input type="number" value={price} onChange={(event) => setPrice(event.target.value)} />
-                        <br></br>
+                        <br />
+                        <br />
                         <input type="submit" value="Lisää ilmoitus" />
                     </form>
-
-                    {responseFromServer}
+                    <br />
+                    {<p>{responseFromServer}</p>}
                 </div>
             ) : (
                 <div className="container">

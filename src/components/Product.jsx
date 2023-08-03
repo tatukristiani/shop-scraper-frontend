@@ -9,7 +9,7 @@ function Product({ product }) {
                 <td><div className="image-container"><img className="image" src={product.image} alt={product.title} /></div></td>
                 <td>{product.title}</td>
                 <td>{product.price}</td>
-                <td><a href={product.link}>Linki sivustolle</a></td>
+                <td><a href={product.link} target="_blank">Linki sivustolle</a></td>
             </tr>
         </>
     )

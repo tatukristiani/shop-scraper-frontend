@@ -38,7 +38,7 @@ function ForgotPasswordPage() {
                 </div>
             </form>
             <br />
-            {messageToUser}
+            <p>{messageToUser}</p>
         </div>
     )
 }

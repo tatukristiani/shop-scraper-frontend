@@ -22,8 +22,6 @@ function ResetPasswordPage() {
                 headers: { 'Content-Type': 'application/json' }
             })
                 .then(response => {
-                    setPassword('');
-                    setConfirmationPassword('');
                     if (response.status === 200) {
                         setResponseMessage('Password successfully changed!');
                     } else {
@@ -40,10 +38,17 @@ function ResetPasswordPage() {
     }
 
     useEffect(() => {
-        if (responseMessage.length != 0) {
+        if (responseMessage.length > 0 && (password.length > 0 || confirmationPassword.length > 0)) {
             setResponseMessage('');
         }
     }, [password, confirmationPassword])
+
+    useEffect(() => {
+        if (responseMessage.length > 0) {
+            setPassword('');
+            setConfirmationPassword('');
+        }
+    }, [responseMessage])
 
     return (
         <div className="container">
@@ -69,7 +74,7 @@ function ResetPasswordPage() {
                 </div>
             </form>
             <br />
-            {responseMessage}
+            <p>{responseMessage}</p>
         </div>
     )
 }

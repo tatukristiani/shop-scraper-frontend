@@ -1,0 +1,8 @@
+.notification-create-container {
+    padding: 50px;
+}
+
+.notification-create-container h3,
+form {
+    margin: 35px;
+}

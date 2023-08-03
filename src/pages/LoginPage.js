@@ -46,19 +46,16 @@ function LoginPage() {
     return (
         <div className="container">
             <h2>Login</h2>
-            <br></br>
             <form method="post" onSubmit={handleLogin}>
-                <div className="container">
-                    <div className="container">
-                        <label htmlFor="email"><b>Email</b></label>
-                    </div>
-                    <div className="container">
+                <div className="login-container">
+                    <div className="login-div">
+                        <label htmlFor="email">Email</label>
+                        <br />
                         <input type="email" placeholder="Enter email address" name="email" value={userEmail} onChange={(event) => setUserEmail(event.target.value)} required />
                     </div>
-                    <div className="container">
-                        <label htmlFor="password"><b>Password</b></label>
-                    </div>
-                    <div className="container">
+                    <div className="login-div">
+                        <label htmlFor="password">Password</label>
+                        <br />
                         <input type="password" placeholder="Enter Password" name="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
                     </div>
                     <br></br>
@@ -67,7 +64,7 @@ function LoginPage() {
 
                 <br></br>
                 <div className="container">
-                    <span><Link to="/forgot-password">Forgot password?</Link></span>
+                    <span><Link to="/forgot-password" className="nav-link px-4">Forgot password?</Link></span>
                 </div>
             </form>
 

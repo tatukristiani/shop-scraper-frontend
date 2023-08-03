@@ -15,9 +15,8 @@ function RegisterPage() {
 
         try {
             const request = await axios.post('account', user).then(response => {
-                setEmail('');
-                setPassword('');
                 if (response.status === 201) {
+                    console.log(1);
                     setResponseFromServer("Account created successfully!");
                 } else {
                     setResponseFromServer("Failed to create an account... Try another email address perhaps.")
@@ -34,6 +33,15 @@ function RegisterPage() {
 
     useEffect(() => {
         if (responseFromServer.length != 0) {
+            setEmail('');
+            setPassword('');
+        }
+    }, [responseFromServer])
+
+
+    useEffect(() => {
+        if (responseFromServer.length != 0 && (email != '' || password != '')) {
+            console.log(2);
             setResponseFromServer('');
         }
     }, [password, email])
@@ -41,27 +49,24 @@ function RegisterPage() {
     return (
         <div className="container">
             <h2>Register</h2>
-            <br></br>
             <form method="post" onSubmit={handleRegister}>
-                <div className="container">
-                    <div className="container">
-                        <label htmlFor="email"><b>Email</b></label>
-                    </div>
-                    <div className="container">
+                <div className="register-container">
+                    <div className="register-div">
+                        <label htmlFor="email">Email</label>
+                        <br />
                         <input type="email" placeholder="Enter email address" name="email" value={email} onChange={(event) => setEmail(event.target.value)} required />
                     </div>
-                    <div className="container">
-                        <label htmlFor="password"><b>Password</b></label>
-                    </div>
-                    <div className="container">
+                    <div className="register-div">
+                        <label htmlFor="password">Password</label>
+                        <br />
                         <input type="password" placeholder="Enter Password" name="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
                     </div>
                     <br></br>
                     <button type="submit">Register</button>
                 </div>
             </form>
-
-            {responseFromServer}
+            <br />
+            <p>{responseFromServer}</p>
         </div>
     )
 }
