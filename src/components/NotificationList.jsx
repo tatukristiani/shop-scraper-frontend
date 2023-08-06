@@ -21,9 +21,8 @@ function NotificationList() {
             if (response.data) {
                 fetchData();
             }
-            console.log(response.data);
         } catch (error) {
-            console.log(error);
+            setUserMessage("Sorry could not change the status of the notification.");
         }
     }
 
@@ -33,10 +32,7 @@ function NotificationList() {
         // Removes notification from db
         const response = await axios.delete(`notifications/${notification._id}`);
         if (response) {
-            console.log("Removed");
-            fetchData();
-        } else {
-            console.log("Error when removing");
+            await fetchData();
         }
 
     }

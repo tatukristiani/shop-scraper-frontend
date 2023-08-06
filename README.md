@@ -20,6 +20,7 @@ Frontend is hosted on Netflify.
     - Create A new Config Variable to Heroku either by their platform or using command -> heroku config:set VAR_NAME="VAR_VALUE"
     - Change the current MongoDB connection to connect to process.env.VAR_NAME (VAR_NAME is replaced by the name chosen earlier)
 3. Publish Frontend (React.js) to Netlify
+    - Instead of "npm run build" build command use "CI= npm run build"
 4. Heroku deploy commands:
     - git add .
     - git commit -am "make it better"
