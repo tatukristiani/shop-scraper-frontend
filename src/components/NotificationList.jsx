@@ -31,8 +31,10 @@ function NotificationList() {
     const RemoveNotification = async (notification) => {
         // Removes notification from db
         const response = await axios.delete(`notifications/${notification._id}`);
-        if (response) {
-            await fetchData();
+        if (response.status === 200) {
+            setNotifications(notifications.filter(a => a._id !== notification._id));
+        } else {
+            setUserMessage("Sorry removing the notification failed.");
         }
 
     }
@@ -54,6 +56,7 @@ function NotificationList() {
     useEffect(() => {
         fetchData();
     }, [])
+
 
     return (
         <div className="container">
