@@ -68,7 +68,7 @@ function LoginPage() {
                 </div>
             </form>
 
-            {responseFromServer}
+            <p>{responseFromServer}</p>
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "../utility/axios";
 
-// TODO: Add HTTP status codes to responses and on 200 reroute to login and others show message from server
 function RegisterPage() {
 
     const [email, setEmail] = useState('');

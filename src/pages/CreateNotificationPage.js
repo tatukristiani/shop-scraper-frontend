@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import axios from "../utility/axios";
 import { UserContext } from "../utility/UserContext.js";
 import { Link } from "react-router-dom";
-import "../styles/createNotification.css";
 
 
 function CreateNotificationPage() {
@@ -35,19 +34,19 @@ function CreateNotificationPage() {
         <>
             {savedUser ? (
                 <div className="notification-create-container">
-                    <h3>Aseta sähköposti ilmoitus hakusanalla ja MAX hinnalla</h3>
+                    <h3>Set the product name and max price to create a new notification</h3>
                     <form method="post" onSubmit={createNotification}>
-                        <label>Hakusana:</label>
+                        <label>Product:</label>
                         <br />
                         <input type="text" value={productName} onChange={(event) => setProductName(event.target.value)} />
                         <br />
                         <br />
-                        <label>Hinta (MAX):</label>
+                        <label>Price (MAX):</label>
                         <br />
                         <input type="number" value={price} onChange={(event) => setPrice(event.target.value)} />
                         <br />
                         <br />
-                        <input type="submit" value="Lisää ilmoitus" />
+                        <input type="submit" value="Create" />
                     </form>
                     <br />
                     {<p>{responseFromServer}</p>}

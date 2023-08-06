@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "../utility/axios";
 import Notification from "./Notification";
-import "../styles/notification.css";
+import { UserContext } from "../utility/UserContext.js";
 
 function NotificationList() {
     const [notifications, setNotifications] = useState([]);
-
+    const { savedUser } = useContext(UserContext);
+    const [userMessage, setUserMessage] = useState('');
 
     // Changes the active status of notification.
     const HandleActive = async (notification) => {
@@ -42,10 +43,16 @@ function NotificationList() {
 
     // Fetch notifications
     async function fetchData() {
-        const response = await axios.get("notifications");
-        if (response) {
-            setNotifications(response.data);
-        }
+
+        const request = await axios.get(`notifications?email=${savedUser}`).then(response => {
+            if (response.data.length > 0) {
+                setNotifications(response.data);
+            } else {
+                setUserMessage("You don't have any notifications yet. Go and add some!");
+            }
+        }).catch(error => {
+            setUserMessage("Something went wrong, sorry about this...");
+        });
     }
 
     useEffect(() => {
@@ -54,15 +61,19 @@ function NotificationList() {
 
     return (
         <div className="container">
-            <ul>
-                {notifications.map((n => (
-                    <li>
-                        <Notification notification={n} />
-                        <button onClick={() => HandleActive(n)}>{n.active ? "Deactivate" : "Activate"}</button>
-                        <button onClick={() => RemoveNotification(n)}>Remove</button>
-                    </li>
-                )))}
-            </ul>
+            {notifications.length > 0 ? (
+                <ul>
+                    {notifications.map((n => (
+                        <li>
+                            <Notification notification={n} />
+                            <button onClick={() => HandleActive(n)}>{n.active ? "Deactivate" : "Activate"}</button>
+                            <button onClick={() => RemoveNotification(n)}>Remove</button>
+                        </li>
+                    )))}
+                </ul>
+            ) : (
+                <p>{userMessage}</p>
+            )}
         </div>
     )
 }

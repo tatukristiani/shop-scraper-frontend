@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../utility/UserContext.js";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "../utility/axios";
-import "../styles/accountPage.css";
 
 function AccountPage() {
     const { savedUser, setSavedUser } = useContext(UserContext);

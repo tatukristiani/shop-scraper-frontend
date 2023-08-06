@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState } from "react";
 import SearchPage from './pages/SearchPage';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
