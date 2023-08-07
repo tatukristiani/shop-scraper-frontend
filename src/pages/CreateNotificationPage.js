@@ -16,7 +16,7 @@ function CreateNotificationPage() {
         let notification = {
             product: productName,
             price: price,
-            active: false,
+            active: true,
             email: savedUser
         };
 
