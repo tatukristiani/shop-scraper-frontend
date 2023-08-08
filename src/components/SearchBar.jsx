@@ -7,7 +7,7 @@ function SearchBar({ HandleSearch, searchValue, maxPrice, onSearchChange, onMaxP
             <div className="search-div">
                 <label>Product</label>
                 <br />
-                <input type="text" placeholder="Tuoteen nimi" value={searchValue} onChange={onSearchChange} />
+                <input type="text" placeholder="Product name" value={searchValue} onChange={onSearchChange} />
             </div>
             <div className="search-div">
                 <label>Price (MAX)</label>
