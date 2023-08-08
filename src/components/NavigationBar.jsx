@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../utility/UserContext.js";
+import { BsArrowRightSquare } from "react-icons/bs";
+import { RiAlignJustify } from "react-icons/ri";
+
 
 function NavigationBar() {
     const { savedUser, setSavedUser } = useContext(UserContext);
@@ -47,7 +50,7 @@ function NavigationBar() {
                     }
 
                     <button className={menuButtonClicked ? "hamburger is-active" : "hamburger"} onClick={toggleMenuButton}>
-                        <div class="bar"></div>
+                        <RiAlignJustify />
                     </button>
 
                 </div>
@@ -68,14 +71,14 @@ function NavigationBar() {
                         )
                     }
                     <button className={menuButtonClicked ? "hamburger is-active" : "hamburger"} onClick={toggleMenuButton}>
-                        <div class="bar"></div>
+                        <BsArrowRightSquare />
                     </button>
                 </div>
             </div>
         </nav>
-
-
     )
+
+
 }
 
 export default NavigationBar;
