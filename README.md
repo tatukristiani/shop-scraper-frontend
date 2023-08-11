@@ -1,6 +1,6 @@
-# SalesAlert Pro Project
+# Sales Alert Pro Project
 
-> SalesAlert Pro is a simple website and it allows you to create email notifications for products sold on Tori.fi. You can also search for products, but this was just added as an extra.
+> Sales Alert Pro is a simple website and it allows you to create email notifications for products sold on Tori.fi. You can also search for products, but this was just added as an extra.
 > 
 > The sole purpose of this project was for me to learn a little about web scraping and I used cheerios with this one.
 
@@ -8,7 +8,7 @@
 
 This repository holds the React.js frontend source code & the backend is located in another repository which is hosted on Heroku.
 
-Netflify was used for the Frontend hosting. You can find the web site here: [SalesAlert Pro](https://keen-cassata-9a91f3.netlify.app/)
+Netflify was used for the Frontend hosting. You can find the web site here: [Sales Alert Pro](https://keen-cassata-9a91f3.netlify.app/)
 
 
 ## Instructions & rules of the website
