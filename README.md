@@ -42,14 +42,3 @@ You can also change your password by filling the password fields & clicking the 
 **Forgot Password:**
 
 If you happen to forgot your password, you can reset it from the Login page through clicking the "Forgot password?" button & giving the email address of your account. An email is sent to that email address which holds a link to a page where the password can be reset.
-
-## Steps for publishing (added for documentation purposes for myself)
-1. Publish Backend (Node.js/express server) to Heroku
-    - Create a new project on Heroku & follow the steps from Heroku to push the project to git
-    - Make sure your index.js/app.js AKA server files app.listen() contains -> process.env.PORT since Heroku uses their own port
-    - Make sure package.json contains "start": "node index.js" under the scripts section, since it's needed to start the server
-    - Add all relevant environment variables to heroku
-2. Configure MongoDB to Heroku
-    - Allow the IP of the backend to connect to MondoDB and add the connection string to environment variables
-3. Publish Frontend (React.js) to Netlify
-    - Instead of "npm run build" build command use "CI= npm run build"
