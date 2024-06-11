@@ -8,7 +8,7 @@
 
 This repository holds the React.js frontend source code & the backend is located in another repository which is hosted on Heroku.
 
-Netflify was used for the Frontend hosting. You can find the web site here: [Sales Alert Pro](https://keen-cassata-9a91f3.netlify.app/)
+Netflify was used for the Frontend hosting. Currently the website is offline.
 
 
 ## Instructions & rules of the website
